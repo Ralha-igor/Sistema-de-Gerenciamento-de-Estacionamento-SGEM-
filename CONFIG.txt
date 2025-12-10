@@ -1,0 +1,21 @@
+
+# Netbeans + Tomcat
+
+> Menu: Tools/Servers
+Add Server  ...
+Apache Tomcat
+Next
+Server Location: Browse: /opt/apache-tomcat10
+Username: root
+Password: root
+Create user if does not exist: True
+Finish
+Close
+
+
+# Git Commit & Push
+
+$ git config --global user.name "Your Name"
+$ git config --global user.email youremail@mail.com
+
+

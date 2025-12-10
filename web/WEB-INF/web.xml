@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <welcome-file-list>
+        <welcome-file>/home/login.jsp</welcome-file>
+    </welcome-file-list>
+    <session-config>
+        <session-timeout>2880</session-timeout>
+        <!-- em minutos -->
+    </session-config>
+    <listener>
+        <listener-class>controller.ContextListener</listener-class>
+    </listener>
+    <filter>
+        <filter-name>AutenticadorApp</filter-name>
+        <filter-class>controller.AutenticadorApp</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AutenticadorApp</filter-name>
+        <url-pattern>/home/app/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>AutenticadorAdm</filter-name>
+        <filter-class>controller.AutenticadorAdm</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AutenticadorAdm</filter-name>
+        <url-pattern>/home/app/adm/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>AutenticadorAtm</filter-name>
+        <filter-class>controller.AutenticadorAtm</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AutenticadorAtm</filter-name>
+        <url-pattern>/home/app/atm/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>AutenticadorEsm</filter-name>
+        <filter-class>controller.AutenticadorEsm</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AutenticadorEsm</filter-name>
+        <url-pattern>/home/app/Esm/*</url-pattern>
+    </filter-mapping>
+    
+    <error-page>
+	<exception-type>java.lang.Exception</exception-type>
+	<location>/home/erro_pagina.html</location>
+    </error-page>
+
+    <error-page>
+	<error-code>404</error-code>
+	<location>/home_pagina.html</location>
+    </error-page>
+    
+    
+    <servlet>
+        <servlet-name>GetPost</servlet-name>
+        <servlet-class>aulas.servlet.getpost.GetPost</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FrontController</servlet-name>
+        <servlet-class>controller.FrontController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetPost</servlet-name>
+        <url-pattern>/aulas/servlet/getpost</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FrontController</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+</web-app>

@@ -1,0 +1,43 @@
+1️⃣ Recebendo as datas de entrada e saída
+
+Pegamos entrada_datetime e saida_datetime do formulário.
+
+Converti essas strings em objetos LocalDateTime usando um DateTimeFormatter:
+
+LocalDateTime entrada = LocalDateTime.parse(entrada_datetime, formatter);
+LocalDateTime saida = LocalDateTime.parse(saida_datetime, formatter);
+
+2️⃣ Calculando a duração em minutos
+
+Usamos Duration.between(entrada, saida).toMinutes() para obter o tempo total em minutos.
+
+3️⃣ Convertendo para blocos de 30 minutos
+
+Cada 30 minutos é considerado um “bloco” de cobrança.
+
+Para cobrar parcialmente os blocos, usamos Math.ceil:
+
+long blocos = (long) Math.ceil(minutos / 30.0);
+
+
+Exemplo: 35 minutos → 2 blocos.
+
+4️⃣ Calculando o valor total
+
+Cada bloco custa R$10,90.
+
+Multiplicamos o número de blocos pelo valor e arredondamos para 2 casas decimais:
+
+BigDecimal total = BigDecimal.valueOf(blocos * 10.90).setScale(2, RoundingMode.HALF_UP);
+valor_total = total.doubleValue();
+
+5️⃣ Salvando no banco
+
+O valor_total calculado é setado no objeto Estacionamento antes de salvar:
+
+us.setValor_total(valor_total);
+us.save();
+
+
+💡 Resumo rápido:
+O sistema pega entrada e saída, calcula minutos, converte em blocos de 30 minutos, multiplica por R$10,90 e arredonda para 2 casas decimais. Esse valor é salvo automaticamente no banco ao criar ou atualizar o estacionamento.
