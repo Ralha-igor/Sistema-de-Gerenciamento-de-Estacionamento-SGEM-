@@ -1,7 +1,7 @@
 
 Autor: Igor Ralha Guerreiro Gomes
 
-| [Linkedin](https://www.linkedin.com/igor-ralha-b6867a284) |) |
+| [Linkedin](https://www.linkedin.com/in/igor-ralha-b6867a284/) |) |
 ---
 
 Descrição: Projeto prático desenvolvido em aula
