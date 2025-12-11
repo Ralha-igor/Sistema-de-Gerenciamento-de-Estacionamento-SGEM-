@@ -69,7 +69,7 @@ public class FrontController extends HttpServlet {
             }
 
             response.sendRedirect(
-                    request.getContextPath() + "/home/app/erro_pagina.jsp?msg="
+                    request.getContextPath() + "/home/erro_pagina.jsp?msg="
                     + URLEncoder.encode(msg, "UTF-8")
             );
 
@@ -78,7 +78,7 @@ public class FrontController extends HttpServlet {
             String msg = "Erro inesperado: " + ex.getMessage();
 
             response.sendRedirect(
-                    request.getContextPath() + "/home/app/erro_pagina.jsp?msg="
+                    request.getContextPath() + "/home/erro_pagina.jsp?msg="
                     + URLEncoder.encode(msg, "UTF-8")
             );
         }
@@ -128,7 +128,7 @@ public class FrontController extends HttpServlet {
             }
 
             response.sendRedirect(
-                    request.getContextPath() + "/home/app/erro_pagina.jsp?msg="
+                    request.getContextPath() + "/home/erro_pagina.jsp?msg="
                     + URLEncoder.encode(msg, "UTF-8")
             );
 
@@ -137,7 +137,7 @@ public class FrontController extends HttpServlet {
             String msg = "Erro inesperado: " + ex.getMessage();
 
             response.sendRedirect(
-                    request.getContextPath() + "/home/app/erro_pagina.jsp?msg="
+                    request.getContextPath() + "/home/erro_pagina.jsp?msg="
                     + URLEncoder.encode(msg, "UTF-8")
             );
         }
@@ -560,7 +560,7 @@ public class FrontController extends HttpServlet {
         ExceptionLogTrack.getInstance().addLog(ex);
 
         response.sendRedirect(
-                request.getContextPath() + "/home/app/erro_pagina.jsp?msg="
+                request.getContextPath() + "/home/erro_pagina.jsp?msg="
                 + URLEncoder.encode(msg, "UTF-8")
         );
     }
@@ -575,7 +575,7 @@ public class FrontController extends HttpServlet {
         ExceptionLogTrack.getInstance().addLog(ex);
 
         response.sendRedirect(
-                request.getContextPath() + "/home/app/erro_pagina.jsp?msg="
+                request.getContextPath() + "/home/erro_pagina.jsp?msg="
                 + URLEncoder.encode(msg, "UTF-8")
         );
     }

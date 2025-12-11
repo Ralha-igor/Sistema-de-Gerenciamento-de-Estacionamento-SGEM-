@@ -45,12 +45,12 @@
     
     <error-page>
 	<exception-type>java.lang.Exception</exception-type>
-	<location>/home/erro_pagina.html</location>
+	<location>/home/erro_pagina.jsp</location>
     </error-page>
 
     <error-page>
 	<error-code>404</error-code>
-	<location>/home_pagina.html</location>
+	<location>/home_pagina.jsp</location>
     </error-page>
     
     
